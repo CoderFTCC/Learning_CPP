@@ -1,0 +1,124 @@
+﻿#include <iostream>
+#include <string>
+#include "Learning_CPP.h"
+using namespace std;
+
+//学生结构体定义
+struct student
+{
+	//成员列表
+	string name;  //姓名
+	int age;      //年龄
+	int score;    //分数
+};
+
+//教师结构体定义
+struct teacher
+{
+	//成员列表
+	int id; //职工编号
+	string name;  //教师姓名
+	int age;   //教师年龄
+	struct student stu; //子结构体 学生
+};
+
+int main01()
+{
+
+	struct teacher t1;
+	t1.id = 10000;
+	t1.name = "老王";
+	t1.age = 40;
+
+	t1.stu.name = "张三";
+	t1.stu.age = 18;
+	t1.stu.score = 100;
+
+	struct teacher* teacher_p = &t1;
+	teacher_p->stu.name = "李四";
+
+	cout << "教师编号：" << teacher_p->id << " 教师姓名：" << teacher_p->name << " 教师年龄：" << teacher_p->age << endl;
+	cout << "学生姓名：" << teacher_p->stu.name << " 学生年龄：" << teacher_p->stu.age << " 学生成绩：" << teacher_p->stu.score << endl;
+
+	//student stu1 = { "张三", 18, 100 }; //结构体变量创建方式1
+	//
+	//student arr[10] = { {"张三", 18, 100}, {"李四", 19, 90} }; //结构体变量创建方式2
+	//
+	//cout << stu1.name << " " << stu1.age << " " << stu1.score << endl;
+	//
+	//cout << "这里是结构体数组的名称" << arr[0].name << "年龄" << arr[0].age << "分数" << arr[0].score << endl;
+
+	//system("pause");
+
+	return 0;
+}
+
+/**int main() {
+
+	int a = 10;
+
+	int* p;
+	p = &a; //指针指向数据a的地址
+
+	cout << *p << endl; //* 解引用
+	cout << sizeof(p) << endl;
+	cout << sizeof(char*) << endl;
+	cout << sizeof(float*) << endl;
+	cout << sizeof(double*) << endl;
+
+	//system("pause");
+
+	return 0;
+}
+*/
+
+void Learning_Day01_01()
+{
+	int arr[9] = { 4,2,8,0,5,7,1,3,9 };
+	for (int i = 1; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		for (int j = 0; j < sizeof(arr) / sizeof(arr[0]) - i; j++)
+		{
+			if (arr[j] > arr[j + 1])
+			{
+				Exchange(arr + j, arr + j + 1);
+			}
+		}
+	}
+
+	IntArrayOutput(arr, sizeof(arr) / sizeof(arr[0]));
+}
+
+void Exchange(int* num1, int* num2) {
+
+	int temp = *num1;
+	*num1 = *num2;
+	*num2 = temp;
+
+}
+
+void Invert()
+{
+	int arr[] = { 1,3,2,5,4 };
+
+	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]) / 2; i++)
+	{
+		int temp = arr[i];
+		arr[i] = arr[sizeof(arr) / sizeof(arr[0]) - 1 - i];
+		arr[sizeof(arr) / sizeof(arr[0]) - 1 - i] = temp;
+	}
+
+	for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
+	{
+		cout << arr[i] << " ";
+	}
+}
+
+void IntArrayOutput(int arr[], int size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+}

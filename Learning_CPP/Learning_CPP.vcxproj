@@ -127,12 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Launcher.cpp" />
+    <ClCompile Include="Launcher.txt" />
     <ClCompile Include="Learning_CPP.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Launcher.h" />
-    <ClInclude Include="Learning_CPP.h" />
+    <ClInclude Include="Launcher.htxt" />
+    <ClInclude Include="Learning_CPP.htxt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

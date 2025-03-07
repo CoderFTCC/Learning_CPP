@@ -51,10 +51,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Learning_CPP.h">
+    <ClInclude Include="Learning_CPP.htxt">
       <Filter>头文件\section1\Duration</Filter>
     </ClInclude>
-    <ClInclude Include="Launcher.h">
+    <ClInclude Include="Launcher.htxt">
       <Filter>头文件\section1\Project</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClCompile Include="Learning_CPP.txt">
       <Filter>源文件\section1\Duration</Filter>
     </ClCompile>
-    <ClCompile Include="Launcher.cpp">
+    <ClCompile Include="Launcher.txt">
       <Filter>源文件\section1\Project</Filter>
     </ClCompile>
   </ItemGroup>
